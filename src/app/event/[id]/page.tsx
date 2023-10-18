@@ -39,7 +39,6 @@ export default function Event() {
             >
               {isEditUsers ? 'Voltar para dashboard' : 'Editar usuários'}
             </button>
-            <button className='border-b-2'>Sair</button>
           </div>
         </div>
         <h1 className='mt-4 md:mb-6 md:mt-0 font-semibold text-lg md:text-3xl'>{'{EventName}'}</h1>

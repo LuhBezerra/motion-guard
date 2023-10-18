@@ -30,7 +30,7 @@ export default function Home() {
             >
               {isEditEvents ? 'Voltar para eventos' : 'Editar eventos'}
             </button>
-            <button className='border-b-2'>Sair</button>
+            <button className='border-b-2' onClick={() => router.push('/login')}>Sair</button>
           </div>
         </div>
         <h1 className='mt-10 md:mt-0 font-semibold text-lg w-[90%] md:w-[40rem] md:text-3xl'>{'Bem vindo, {UserName}!'}</h1>
