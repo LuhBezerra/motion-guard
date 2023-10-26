@@ -2,7 +2,7 @@ import { ChevronRightIcon, PencilSquareIcon, TrashIcon } from "@heroicons/react/
 import Image, { StaticImageData } from "next/image"
 
 interface CardProps {
-  avatar?: StaticImageData
+  avatar?: string
   title: string
   disabled?: boolean
   onClick?: () => void
@@ -11,9 +11,11 @@ interface CardProps {
 }
 
 export const Card = ({ avatar, title, disabled, onDelete, onEdit, onClick }: CardProps) => {
-  return <div className={`p-6 border ${disabled ? 'bg-slate-200 opacity-50' : 'bg-white'} ${onClick ? 'cursor-pointer' : 'cursor-default'} flex gap-5 items-center rounded-xl`} onClick={onClick}>
+  return <div className={`p-4 border ${disabled ? 'bg-slate-200 opacity-50' : 'bg-white'} ${onClick ? 'cursor-pointer' : 'cursor-default'} flex gap-5 items-center rounded-xl`} onClick={onClick}>
     {avatar && (
-      <Image src={avatar} alt='avatar' />
+      <div className="overflow-hidden flex bg-gray-300 justify-center items-center rounded-full w-[4.4rem] h-[4.4rem]">
+        <Image src={avatar} alt='avatar' width={70} height={70} className="object-cover" />
+      </div>
     )}
     <p className="text-lg text-gray-950">{title}</p>
     {(onDelete || onEdit) && (
